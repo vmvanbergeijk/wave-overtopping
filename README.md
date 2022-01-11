@@ -5,7 +5,7 @@ Our paper on the validation of the model is freely available at https://doi.org/
 
 Van Bergeijk, V.M.; Warmink, J.J.; Hulscher, S.J.M.H. Modelling the Wave Overtopping Flow over the Crest and the Landward Slope of Grass-Covered Flood Defences. J. Mar. Sci. Eng. 2020, 8, 489.
 
-Please reference to it probably when using this model.
+Please reference to it when using this model.
 
 This examples computes the flow for the Millingen a/d Rijn case for an overtopping volume of 2000 l/m.
 The model is run using the Allrun script, which generates the mesh, solves the flow and computes the post process functions.
