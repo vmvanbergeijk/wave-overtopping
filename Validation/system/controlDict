@@ -1,0 +1,87 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  4.x                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile
+{
+    version     2.0;
+    format      ascii;
+    class       dictionary;
+    location    "system";
+    object      controlDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+application     interIsoFoam;
+
+startFrom       startTime;
+
+startTime       0;
+
+stopAt          endTime;
+
+endTime         30;
+
+deltaT          0.001;
+
+writeControl    adjustableRunTime;
+
+writeInterval   0.1;
+
+purgeWrite      0;
+
+writeFormat     ascii;
+
+writePrecision  6;
+
+writeCompression uncompressed;
+
+timeFormat      general;
+
+timePrecision   6;
+
+runTimeModifiable yes;
+
+adjustTimeStep  yes;
+
+maxCo           1;
+maxAlphaCo      1;
+
+maxDeltaT       1;
+
+libs (
+      "libOpenFOAM.so"
+      "libsimpleSwakFunctionObjects.so"
+      "libswakFunctionObjects.so"
+      "libgroovyBC.so"
+     );
+
+functions
+{
+    pressure1
+    {
+	type	pressure;
+	libs   	("libfieldFunctionObjects.so");
+	calcTotal   yes;
+        calcCoeff   no;
+	outputControl outputTime;
+        outputInterval 1; 
+    }
+    wallShearStress1
+    {
+    	type        wallShearStressProfile;
+    	libs        ("libmyFunctionObjects.so");
+
+
+    	// Optional entries
+	outputControl outputTime;
+        outputInterval 1; 
+
+    	// Restrict to a set of patches
+    	patches     ("dikeprofile");
+    }
+}
+// ************************************************************************* //

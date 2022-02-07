@@ -1,0 +1,453 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1806                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+FoamFile
+{
+    version         2.0;
+    format          ascii;
+    class           dictionary;
+    location        system;
+    object          sampleDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+type sets;  // define type here
+
+// Set output format : choice of
+//      xmgr
+//      jplot
+//      gnuplot
+//      raw
+setFormat raw;
+
+// Surface output format. Choice of
+//      null        : suppress output
+//      foam        : separate points, faces and values file
+//      vtk         : VTK ascii format
+//      raw         : x y z value format for use with e.g. gnuplot 'splot'.
+//
+// Note:
+// other formats such as obj, stl, etc can also be written (by proxy)
+// but without any values!
+surfaceFormat vtk;
+
+// interpolationScheme. choice of
+//      cell          : use cell-centre value only; constant over cells (default)
+//      cellPoint     : use cell-centre and vertex values
+//      cellPointFace : use cell-centre, vertex and face values.
+// 1] vertex values determined from neighbouring cell-centre values
+// 2] face values determined using the current face interpolation scheme
+//    for the field (linear, gamma, etc.)
+interpolationScheme cellPointFace;
+
+// Fields to sample.
+fields
+(
+	alpha.water
+);
+
+
+// Set sampling definition: choice of
+//      uniform             evenly distributed points on line
+//      face                one point per face intersection
+//      midPoint            one point per cell, inbetween two face intersections
+//      midPointAndFace     combination of face and midPoint
+//
+//      curve               specified points, not nessecary on line, uses
+//                          tracking
+//      cloud               specified points, uses findCell
+//
+// axis: how to write point coordinate. Choice of
+// - x/y/z: x/y/z coordinate only
+// - xyz: three columns
+//  (probably does not make sense for anything but raw)
+// - distance: distance from start of sampling line (if uses line) or
+//             distance from first specified sampling point
+//
+// type specific:
+//      uniform, face, midPoint, midPointAndFace : start and end coordinate
+//      uniform: extra number of sampling points
+//      curve, cloud: list of coordinates
+sets
+(
+    alpha1
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (0.5 0.0 0);
+	end     (0.5 6.0 0);
+    }
+    alpha2
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (1.0 0.0 0);
+	end     (1.0 6.0 0);
+    }
+    alpha3
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (1.5 0.0 0);
+	end     (1.5 6.0 0);
+    }
+    alpha4
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (2.0 0.0 0);
+	end     (2.0 6.0 0);
+    }
+    alpha5
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (2.5 0.0 0);
+	end     (2.5 6.0 0);
+    }
+    alpha6
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (3.0 0.0 0);
+	end     (3.0 6.0 0);
+    }
+    alpha7
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (3.5 0.0 0);
+	end     (3.5 6.0 0);
+    }
+    alpha8
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (4.0 0.0 0);
+	end     (4.0 6.0 0);
+    }
+    alpha9
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (4.5 0.0 0);
+	end     (4.5 6.0 0);
+    }
+    alpha10
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (5.0 0.0 0);
+	end     (5.0 6.0 0);
+    }
+    alpha11
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (5.5 0.0 0);
+	end     (5.5 6.0 0);
+    }
+    alpha12
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (6.0 0.0 0);
+	end     (6.0 6.0 0);
+    }
+    alpha13
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (6.5 0.0 0);
+	end     (6.5 6.0 0);
+    }
+    alpha14
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (7.0 0.0 0);
+	end     (7.0 6.0 0);
+    }
+    alpha15
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (7.5 0.0 0);
+	end     (7.5 6.0 0);
+    }
+    alpha16
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (8.0 0.0 0);
+	end     (8.0 6.0 0);
+    }
+    alpha17
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (8.5 0.0 0);
+	end     (8.5 6.0 0);
+    }
+    alpha18
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (9.0 0.0 0);
+	end     (9.0 6.0 0);
+    }
+    alpha19
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (9.5 0.0 0);
+	end     (9.5 6.0 0);
+    }
+    alpha20
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (10.0 0.0 0);
+	end     (10.0 6.0 0);
+    }
+    alpha21
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (10.5 0.0 0);
+	end     (10.5 6.0 0);
+    }
+    alpha22
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (11.0 0.0 0);
+	end     (11.0 6.0 0);
+    }
+    alpha23
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (11.5 0.0 0);
+	end     (11.5 6.0 0);
+    }
+    alpha24
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (12.0 0.0 0);
+	end     (12.0 6.0 0);
+    }
+    alpha25
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (12.5 0.0 0);
+	end     (12.5 6.0 0);
+    }
+    alpha26
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (13.0 0.0 0);
+	end     (13.0 6.0 0);
+    }
+    alpha27
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (13.5 0.0 0);
+	end     (13.5 6.0 0);
+    }
+    alpha28
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (14.0 0.0 0);
+	end     (14.0 6.0 0);
+    }
+    alpha29
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (14.5 0.0 0);
+	end     (14.5 6.0 0);
+    }
+    alpha30
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (15.0 0.0 0);
+	end     (15.0 6.0 0);
+    }
+    alpha31
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (15.5 0.0 0);
+	end     (15.5 6.0 0);
+    }
+    alpha32
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (16.0 0.0 0);
+	end     (16.0 6.0 0);
+    }
+    alpha33
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (16.5 0.0 0);
+	end     (16.5 6.0 0);
+    }
+    alpha34
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (17.0 0.0 0);
+	end     (17.0 6.0 0);
+    }
+    alpha35
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (17.5 0.0 0);
+	end     (17.5 6.0 0);
+    }
+    alpha36
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (18.0 0.0 0);
+	end     (18.0 6.0 0);
+    }
+    alpha37
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (18.5 0.0 0);
+	end     (18.5 6.0 0);
+    }
+    alpha38
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (19.0 0.0 0);
+	end     (19.0 6.0 0);
+    }
+    alpha39
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (19.5 0.0 0);
+	end     (19.5 6.0 0);
+    }
+    alpha40
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (20.0 0.0 0);
+	end     (20.0 6.0 0);
+    }
+
+    alpha41
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (20.5 0.0 0);
+	end     (20.5 6.0 0);
+    }
+    alpha42
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (21.0 0.0 0);
+	end     (21.0 6.0 0);
+    }
+    alpha43
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (21.5 0.0 0);
+	end     (21.5 6.0 0);
+    }
+    alpha44
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (22.0 0.0 0);
+	end     (22.0 6.0 0);
+    }
+    alpha45
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (22.5 0.0 0);
+	end     (22.5 6.0 0);
+    }
+
+);
+
+
+// Surface sampling definition: choice of
+//      plane : values on plane defined by point, normal.
+//      patch : values on patch.
+//
+// 1] patches are not triangulated by default
+// 2] planes are always triangulated
+// 3] iso-surfaces are always triangulated
+surfaces ();
+
+// *********************************************************************** //
