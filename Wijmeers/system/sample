@@ -1,0 +1,1711 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  v1806                                 |
+|   \\  /    A nd           | Web:      www.OpenFOAM.com                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+
+FoamFile
+{
+    version         2.0;
+    format          ascii;
+    class           dictionary;
+    location        system;
+    object          sampleDict;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+type sets;  // define type here
+
+// Set output format : choice of
+//      xmgr
+//      jplot
+//      gnuplot
+//      raw
+setFormat raw;
+
+// Surface output format. Choice of
+//      null        : suppress output
+//      foam        : separate points, faces and values file
+//      vtk         : VTK ascii format
+//      raw         : x y z value format for use with e.g. gnuplot 'splot'.
+//
+// Note:
+// other formats such as obj, stl, etc can also be written (by proxy)
+// but without any values!
+surfaceFormat vtk;
+
+// interpolationScheme. choice of
+//      cell          : use cell-centre value only; constant over cells (default)
+//      cellPoint     : use cell-centre and vertex values
+//      cellPointFace : use cell-centre, vertex and face values.
+// 1] vertex values determined from neighbouring cell-centre values
+// 2] face values determined using the current face interpolation scheme
+//    for the field (linear, gamma, etc.)
+interpolationScheme cellPointFace;
+
+// Fields to sample.
+fields
+(
+	alpha.water
+	U
+);
+
+
+// Set sampling definition: choice of
+//      uniform             evenly distributed points on line
+//      face                one point per face intersection
+//      midPoint            one point per cell, inbetween two face intersections
+//      midPointAndFace     combination of face and midPoint
+//
+//      curve               specified points, not nessecary on line, uses
+//                          tracking
+//      cloud               specified points, uses findCell
+//
+// axis: how to write point coordinate. Choice of
+// - x/y/z: x/y/z coordinate only
+// - xyz: three columns
+//  (probably does not make sense for anything but raw)
+// - distance: distance from start of sampling line (if uses line) or
+//             distance from first specified sampling point
+//
+// type specific:
+//      uniform, face, midPoint, midPointAndFace : start and end coordinate
+//      uniform: extra number of sampling points
+//      curve, cloud: list of coordinates
+sets
+(
+    alpha1
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (0.0501 0.0 0);
+	end     (0.0501 10.0 0);
+    }
+    alpha2
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (0.101 0.0 0);
+	end     (0.101 10.0 0);
+    }
+    alpha3
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (0.1501 0.0 0);
+	end     (0.1501 10.0 0);
+    }
+    alpha4
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (0.201 0.0 0);
+	end     (0.201 10.0 0);
+    }
+
+    alpha5
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (0.2501 0.0 0);
+	end     (0.2501 10.0 0);
+    }
+    alpha6
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (0.301 0.0 0);
+	end     (0.301 10.0 0);
+    }
+    alpha7
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (0.3501 0.0 0);
+	end     (0.3501 10.0 0);
+    }
+    alpha8
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (0.401 0.0 0);
+	end     (0.401 10.0 0);
+    }
+    alpha9
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (0.4501 0.0 0);
+	end     (0.4501 10.0 0);
+    }
+    alpha10
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (0.501 0.0 0);
+	end     (0.501 10.0 0);
+    }
+    alpha11
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (0.5501 0.0 0);
+	end     (0.5501 10.0 0);
+    }
+    alpha12
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (0.6001 0.0 0);
+	end     (0.6001 10.0 0);
+    }
+    alpha13
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (0.6501 0.0 0);
+	end     (0.6501 10.0 0);
+    }
+    alpha14
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (0.701 0.0 0);
+	end     (0.701 10.0 0);
+    }
+
+    alpha15
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (0.7501 0.0 0);
+	end     (0.7501 10.0 0);
+    }
+    alpha16
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (0.801 0.0 0);
+	end     (0.801 10.0 0);
+    }
+    alpha17
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (0.8501 0.0 0);
+	end     (0.8501 10.0 0);
+    }
+    alpha18
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (0.901 0.0 0);
+	end     (0.901 10.0 0);
+    }
+    alpha19
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (0.9501 0.0 0);
+	end     (0.9501 10.0 0);
+    }
+    alpha20
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (1.001 0.0 0);
+	end     (1.001 10.0 0);
+    }
+    alpha21
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (1.0501 0.0 0);
+	end     (1.0501 10.0 0);
+    }
+    alpha22
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (1.101 0.0 0);
+	end     (1.101 10.0 0);
+    }
+    alpha23
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (1.1501 0.0 0);
+	end     (1.1501 10.0 0);
+    }
+    alpha24
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (1.201 0.0 0);
+	end     (1.201 10.0 0);
+    }
+
+    alpha25
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (1.2501 0.0 0);
+	end     (1.2501 10.0 0);
+    }
+    alpha26
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (1.301 0.0 0);
+	end     (1.301 10.0 0);
+    }
+    alpha27
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (1.3501 0.0 0);
+	end     (1.3501 10.0 0);
+    }
+    alpha28
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (1.401 0.0 0);
+	end     (1.401 10.0 0);
+    }
+    alpha29
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (1.4501 0.0 0);
+	end     (1.4501 10.0 0);
+    }
+    alpha30
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (1.501 0.0 0);
+	end     (1.501 10.0 0);
+    }
+    alpha31
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (1.5501 0.0 0);
+	end     (1.5501 10.0 0);
+    }
+    alpha32
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (1.6001 0.0 0);
+	end     (1.6001 10.0 0);
+    }
+    alpha33
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (1.6501 0.0 0);
+	end     (1.6501 10.0 0);
+    }
+    alpha34
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (1.701 0.0 0);
+	end     (1.701 10.0 0);
+    }
+
+    alpha35
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (1.7501 0.0 0);
+	end     (1.7501 10.0 0);
+    }
+    alpha36
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (1.801 0.0 0);
+	end     (1.801 10.0 0);
+    }
+    alpha37
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (1.8501 0.0 0);
+	end     (1.8501 10.0 0);
+    }
+    alpha38
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (1.901 0.0 0);
+	end     (1.901 10.0 0);
+    }
+    alpha39
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (1.9501 0.0 0);
+	end     (1.9501 10.0 0);
+    }
+    alpha40
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (2.001 0.0 0);
+	end     (2.001 10.0 0);
+    } 
+   alpha41
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (2.0501 0.0 0);
+	end     (2.0501 10.0 0);
+    }
+    alpha42
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (2.101 0.0 0);
+	end     (2.101 10.0 0);
+    }
+    alpha43
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (2.1501 0.0 0);
+	end     (2.1501 10.0 0);
+    }
+    alpha44
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (2.201 0.0 0);
+	end     (2.201 10.0 0);
+    }
+    alpha45
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (2.2501 0.0 0);
+	end     (2.2501 10.0 0);
+    }
+    alpha46
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (2.301 0.0 0);
+	end     (2.301 10.0 0);
+    }
+    alpha47
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (2.3501 0.0 0);
+	end     (2.3501 10.0 0);
+    }
+    alpha48
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (2.401 0.0 0);
+	end     (2.401 10.0 0);
+    }
+    alpha49
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (2.4501 0.0 0);
+	end     (2.4501 10.0 0);
+    }
+    alpha50
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (2.501 0.0 0);
+	end     (2.501 10.0 0);
+    }
+    alpha51
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (2.5501 0.0 0);
+	end     (2.5501 10.0 0);
+    }
+    alpha52
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (2.6001 0.0 0);
+	end     (2.6001 10.0 0);
+    }
+    alpha53
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (2.6501 0.0 0);
+	end     (2.6501 10.0 0);
+    }
+    alpha54
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (2.701 0.0 0);
+	end     (2.701 10.0 0);
+    }
+
+    alpha55
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (2.7501 0.0 0);
+	end     (2.7501 10.0 0);
+    }
+    alpha56
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (2.801 0.0 0);
+	end     (2.801 10.0 0);
+    }
+    alpha57
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (2.8501 0.0 0);
+	end     (2.8501 10.0 0);
+    }
+    alpha58
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (2.901 0.0 0);
+	end     (2.901 10.0 0);
+    }
+    alpha59
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (2.9501 0.0 0);
+	end     (2.9501 10.0 0);
+    }
+    alpha60
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (3.001 0.0 0);
+	end     (3.001 10.0 0);
+    }
+    alpha61
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (3.0501 0.0 0);
+	end     (3.0501 10.0 0);
+    }
+    alpha62
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (3.101 0.0 0);
+	end     (3.101 10.0 0);
+    }
+    alpha63
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (3.1501 0.0 0);
+	end     (3.1501 10.0 0);
+    }
+    alpha64
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (3.201 0.0 0);
+	end     (3.201 10.0 0);
+    }
+
+    alpha65
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (3.2501 0.0 0);
+	end     (3.2501 10.0 0);
+    }
+    alpha66
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (3.301 0.0 0);
+	end     (3.301 10.0 0);
+    }
+    alpha67
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (3.3501 0.0 0);
+	end     (3.3501 10.0 0);
+    }
+    alpha68
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (3.401 0.0 0);
+	end     (3.401 10.0 0);
+    }
+    alpha69
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (3.4501 0.0 0);
+	end     (3.4501 10.0 0);
+    }
+    alpha70
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (3.501 0.0 0);
+	end     (3.501 10.0 0);
+    }
+    alpha71
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (3.5501 0.0 0);
+	end     (3.5501 10.0 0);
+    }
+    alpha72
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (3.6001 0.0 0);
+	end     (3.6001 10.0 0);
+    }
+    alpha73
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (3.6501 0.0 0);
+	end     (3.6501 10.0 0);
+    }
+    alpha74
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (3.701 0.0 0);
+	end     (3.701 10.0 0);
+    }
+
+    alpha75
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (3.7501 0.0 0);
+	end     (3.7501 10.0 0);
+    }
+    alpha76
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (3.801 0.0 0);
+	end     (3.801 10.0 0);
+    }
+    alpha77
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (3.8501 0.0 0);
+	end     (3.8501 10.0 0);
+    }
+    alpha78
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (3.901 0.0 0);
+	end     (3.901 10.0 0);
+    }
+    alpha79
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (3.9501 0.0 0);
+	end     (3.9501 10.0 0);
+    }
+    alpha80
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (4.001 0.0 0);
+	end     (4.001 10.0 0);
+    }
+    alpha81
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (4.0501 0.0 0);
+	end     (4.0501 10.0 0);
+    }
+    alpha82
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (4.101 0.0 0);
+	end     (4.101 10.0 0);
+    }
+    alpha83
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (4.1501 0.0 0);
+	end     (4.1501 10.0 0);
+    }
+    alpha84
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (4.201 0.0 0);
+	end     (4.201 10.0 0);
+    }
+
+    alpha85
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (4.2501 0.0 0);
+	end     (4.2501 10.0 0);
+    }
+    alpha86
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (4.301 0.0 0);
+	end     (4.301 10.0 0);
+    }
+    alpha87
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (4.3501 0.0 0);
+	end     (4.3501 10.0 0);
+    }
+    alpha88
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (4.401 0.0 0);
+	end     (4.401 10.0 0);
+    }
+    alpha89
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (4.4501 0.0 0);
+	end     (4.4501 10.0 0);
+    }
+    alpha90
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (4.501 0.0 0);
+	end     (4.501 10.0 0);
+    }
+    alpha91
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (4.5501 0.0 0);
+	end     (4.5501 10.0 0);
+    }
+    alpha92
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (4.601 0.0 0);
+	end     (4.601 10.0 0);
+    }
+    alpha93
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (4.6501 0.0 0);
+	end     (4.6501 10.0 0);
+    }
+    alpha94
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (4.701 0.0 0);
+	end     (4.701 10.0 0);
+    }
+
+    alpha95
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (4.7501 0.0 0);
+	end     (4.7501 10.0 0);
+    }
+    alpha96
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (4.801 0.0 0);
+	end     (4.801 10.0 0);
+    }
+    alpha97
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (4.8501 0.0 0);
+	end     (4.8501 10.0 0);
+    }
+    alpha98
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (4.901 0.0 0);
+	end     (4.901 10.0 0);
+    }
+    alpha99
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (4.9501 0.0 0);
+	end     (4.9501 10.0 0);
+    }
+    alpha100
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (5.001 0.0 0);
+	end     (5.001 10.0 0);
+    }
+    alpha101
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (5.0501 0.0 0);
+	end     (5.0501 10.0 0);
+    }
+    alpha102
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (5.101 0.0 0);
+	end     (5.101 10.0 0);
+    }
+    alpha103
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (5.1501 0.0 0);
+	end     (5.1501 10.0 0);
+    }
+    alpha104
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (5.201 0.0 0);
+	end     (5.201 10.0 0);
+    }
+
+    alpha105
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (5.2501 0.0 0);
+	end     (5.2501 10.0 0);
+    }
+    alpha106
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (5.301 0.0 0);
+	end     (5.301 10.0 0);
+    }
+    alpha107
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (5.3501 0.0 0);
+	end     (5.3501 10.0 0);
+    }
+    alpha108
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (5.401 0.0 0);
+	end     (5.401 10.0 0);
+    }
+    alpha109
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (5.4501 0.0 0);
+	end     (5.4501 10.0 0);
+    }
+    alpha110
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (5.501 0.0 0);
+	end     (5.501 10.0 0);
+    }
+    alpha111
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (5.5501 0.0 0);
+	end     (5.5501 10.0 0);
+    }
+    alpha112
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (5.601 0.0 0);
+	end     (5.601 10.0 0);
+    }
+    alpha113
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (5.6501 0.0 0);
+	end     (5.6501 10.0 0);
+    }
+    alpha114
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (5.701 0.0 0);
+	end     (5.701 10.0 0);
+    }
+
+    alpha115
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (5.7501 0.0 0);
+	end     (5.7501 10.0 0);
+    }
+    alpha116
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (5.801 0.0 0);
+	end     (5.801 10.0 0);
+    }
+    alpha117
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (5.8501 0.0 0);
+	end     (5.8501 10.0 0);
+    }
+    alpha118
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (5.901 0.0 0);
+	end     (5.901 10.0 0);
+    }
+    alpha119
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (5.9501 0.0 0);
+	end     (5.9501 10.0 0);
+    }
+    alpha120
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (6.001 0.0 0);
+	end     (6.001 10.0 0);
+    }
+    alpha121
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (6.0501 0.0 0);
+	end     (6.0501 10.0 0);
+    }
+    alpha122
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (6.101 0.0 0);
+	end     (6.101 10.0 0);
+    }
+    alpha123
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (6.1501 0.0 0);
+	end     (6.1501 10.0 0);
+    }
+    alpha124
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (6.201 0.0 0);
+	end     (6.201 10.0 0);
+    }
+
+    alpha125
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (6.2501 0.0 0);
+	end     (6.2501 10.0 0);
+    }
+    alpha126
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (6.301 0.0 0);
+	end     (6.301 10.0 0);
+    }
+    alpha127
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (6.3501 0.0 0);
+	end     (6.3501 10.0 0);
+    }
+    alpha128
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (6.401 0.0 0);
+	end     (6.401 10.0 0);
+    }
+    alpha129
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (6.4501 0.0 0);
+	end     (6.4501 10.0 0);
+    }
+    alpha130
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (6.501 0.0 0);
+	end     (6.501 10.0 0);
+    }
+    alpha131
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (6.5501 0.0 0);
+	end     (6.5501 10.0 0);
+    }
+    alpha132
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (6.601 0.0 0);
+	end     (6.601 10.0 0);
+    }
+    alpha133
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (6.6501 0.0 0);
+	end     (6.6501 10.0 0);
+    }
+    alpha134
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (6.701 0.0 0);
+	end     (6.701 10.0 0);
+    }
+
+    alpha135
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (6.7501 0.0 0);
+	end     (6.7501 10.0 0);
+    }
+    alpha136
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (6.801 0.0 0);
+	end     (6.801 10.0 0);
+    }
+    alpha137
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (6.8501 0.0 0);
+	end     (6.8501 10.0 0);
+    }
+    alpha138
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (6.901 0.0 0);
+	end     (6.901 10.0 0);
+    }
+    alpha139
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (6.9501 0.0 0);
+	end     (6.9501 10.0 0);
+    }
+    alpha140
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (7.001 0.0 0);
+	end     (7.001 10.0 0);
+    }
+    alpha141
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (7.0501 0.0 0);
+	end     (7.0501 10.0 0);
+    }
+    alpha142
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (7.101 0.0 0);
+	end     (7.101 10.0 0);
+    }
+    alpha143
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (7.1501 0.0 0);
+	end     (7.1501 10.0 0);
+    }
+    alpha144
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (7.201 0.0 0);
+	end     (7.201 10.0 0);
+    }
+
+    alpha145
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (7.2501 0.0 0);
+	end     (7.2501 10.0 0);
+    }
+    alpha146
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (7.301 0.0 0);
+	end     (7.301 10.0 0);
+    }
+    alpha147
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (7.3501 0.0 0);
+	end     (7.3501 10.0 0);
+    }
+    alpha148
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (7.401 0.0 0);
+	end     (7.401 10.0 0);
+    }
+    alpha149
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (7.4501 0.0 0);
+	end     (7.4501 10.0 0);
+    }
+    alpha150
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (7.501 0.0 0);
+	end     (7.501 10.0 0);
+    }
+    alpha151
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (7.5501 0.0 0);
+	end     (7.5501 10.0 0);
+    }
+    alpha152
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (7.601 0.0 0);
+	end     (7.601 10.0 0);
+    }
+    alpha153
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (7.6501 0.0 0);
+	end     (7.6501 10.0 0);
+    }
+    alpha154
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (7.701 0.0 0);
+	end     (7.701 10.0 0);
+    }
+
+    alpha155
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (7.7501 0.0 0);
+	end     (7.7501 10.0 0);
+    }
+    alpha156
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (7.801 0.0 0);
+	end     (7.801 10.0 0);
+    }
+    alpha157
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (7.8501 0.0 0);
+	end     (7.8501 10.0 0);
+    }
+    alpha158
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (7.901 0.0 0);
+	end     (7.901 10.0 0);
+    }
+    alpha159
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (7.9501 0.0 0);
+	end     (7.9501 10.0 0);
+    }
+    alpha160
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (8.001 0.0 0);
+	end     (8.001 10.0 0);
+    }
+    alpha161
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (8.0501 0.0 0);
+	end     (8.0501 10.0 0);
+    }
+    alpha162
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (8.101 0.0 0);
+	end     (8.101 10.0 0);
+    }
+    alpha163
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (8.1501 0.0 0);
+	end     (8.1501 10.0 0);
+    }
+    alpha164
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (8.201 0.0 0);
+	end     (8.201 10.0 0);
+    }
+
+    alpha165
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (8.2501 0.0 0);
+	end     (8.2501 10.0 0);
+    }
+    alpha166
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (8.301 0.0 0);
+	end     (8.301 10.0 0);
+    }
+    alpha167
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (8.3501 0.0 0);
+	end     (8.3501 10.0 0);
+    }
+    alpha168
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (8.40101 0.0 0);
+	end     (8.40101 10.0 0);
+    }
+    alpha169
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (8.4501 0.0 0);
+	end     (8.4501 10.0 0);
+    }
+    alpha170
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (8.501 0.0 0);
+	end     (8.501 10.0 0);
+    }
+    alpha171
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (8.5501 0.0 0);
+	end     (8.5501 10.0 0);
+    }
+    alpha172
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (8.601 0.0 0);
+	end     (8.601 10.0 0);
+    }
+    alpha173
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (8.6501 0.0 0);
+	end     (8.6501 10.0 0);
+    }
+    alpha174
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (8.701 0.0 0);
+	end     (8.701 10.0 0);
+    }
+
+    alpha175
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (8.7501 0.0 0);
+	end     (8.7501 10.0 0);
+    }
+    alpha176
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (8.801 0.0 0);
+	end     (8.801 10.0 0);
+    }
+    alpha177
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (8.8501 0.0 0);
+	end     (8.8501 10.0 0);
+    }
+    alpha178
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (8.901 0.0 0);
+	end     (8.901 10.0 0);
+    }
+    alpha179
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (8.9501 0.0 0);
+	end     (8.9501 10.0 0);
+    }
+    alpha180
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (9.001 0.0 0);
+	end     (9.001 10.0 0);
+    }
+    alpha181
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (9.0501 0.0 0);
+	end     (9.0501 10.0 0);
+    }
+    alpha182
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (9.101 0.0 0);
+	end     (9.101 10.0 0);
+    }
+    alpha183
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (9.15101 0.0 0);
+	end     (9.15101 10.0 0);
+    }
+    alpha184
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (9.201 0.0 0);
+	end     (9.201 10.0 0);
+    }
+
+    alpha185
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (9.2501 0.0 0);
+	end     (9.2501 10.0 0);
+    }
+    alpha186
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (9.301 0.0 0);
+	end     (9.301 10.0 0);
+    }
+    alpha187
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (9.3501 0.0 0);
+	end     (9.3501 10.0 0);
+    }
+    alpha188
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (9.401 0.0 0);
+	end     (9.401 10.0 0);
+    }
+    alpha189
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (9.4501 0.0 0);
+	end     (9.4501 10.0 0);
+    }
+    alpha190
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (9.501 0.0 0);
+	end     (9.501 10.0 0);
+    }
+    alpha191
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (9.5501 0.0 0);
+	end     (9.5501 10.0 0);
+    }
+    alpha192
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (9.60101 0.0 0);
+	end     (9.60101 10.0 0);
+    }
+    alpha193
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (9.6501 0.0 0);
+	end     (9.6501 10.0 0);
+    }
+    alpha194
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (9.701 0.0 0);
+	end     (9.701 10.0 0);
+    }
+
+    alpha195
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (9.7501 0.0 0);
+	end     (9.7501 10.0 0);
+    }
+    alpha196
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (9.801 0.0 0);
+	end     (9.801 10.0 0);
+    }
+    alpha197
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (9.8501 0.0 0);
+	end     (9.8501 10.0 0);
+    }
+    alpha198
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (9.901 0.0 0);
+	end     (9.901 10.0 0);
+    }
+    alpha199
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (9.9501 0.0 0);
+	end     (9.9501 10.0 0);
+    }
+    alpha200
+    {
+        type        midPoint;
+        axis        y;
+
+	start   (10.01 0.0 0);
+	end     (10.01 10.0 0);
+    }
+);
+
+
+// Surface sampling definition: choice of
+//      plane : values on plane defined by point, normal.
+//      patch : values on patch.
+//
+// 1] patches are not triangulated by default
+// 2] planes are always triangulated
+// 3] iso-surfaces are always triangulated
+surfaces ();
+
+// *********************************************************************** //

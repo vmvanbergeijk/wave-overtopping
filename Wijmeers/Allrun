@@ -1,0 +1,7 @@
+blockMesh >&log.blockMesh
+faceSetToSTL >&log.faceSetToSTL
+surfaceFeatureExtract >&log.surfaceFeatureExtract
+snappyHexMesh -overwrite >&log.snappyHexMesh
+interIsoFoam >&log.interIsoFoam
+postProcess -func sample >&log.sample
+postProcess -func samplePressureSurface >&log.sample_pressure
