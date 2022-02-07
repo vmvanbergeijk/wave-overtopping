@@ -1,3 +1,0 @@
-interIsoFoam >&log.interIsoFoam
-postProcess -func writeCellVolumes
-postProcess -func sample
